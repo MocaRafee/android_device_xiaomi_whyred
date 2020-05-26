@@ -19,7 +19,7 @@
     },
     {
         "remote":       "github",
-        "repository":   "Jhonse02/proprietary_vendor_xiaomi_whyred",
+        "repository":   "xiaomeme-whyred/proprietary_vendor_xiaomi_whyred",
         "target_path":  "vendor/xiaomi",
 	"revision":	"10.x"
     },
