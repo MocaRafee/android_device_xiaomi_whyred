@@ -9,11 +9,11 @@
         "remote":       "github",
         "repository":   "Jhonse02/android_device_xiaomi_sdm660-common",
         "target_path":  "device/xiaomi/sdm660-common",
-        "revision":     "lineage-17.1"
+        "revision":     "ten"
     },
     {
         "remote":       "github",
-        "repository":   "xiaomeme-whyred/android_kernel_xiaomi_sdm660",
+        "repository":   "LineageOS/android_kernel_xiaomi_sdm660",
         "target_path":  "kernel/xiaomi/sdm660",
         "revision":     "lineage-17.1"
     },
@@ -27,7 +27,7 @@
         "remote":       "github",
         "repository":   "PixelExperience-Devices/vendor_MiuiCamera",
         "target_path":  "vendor/MiuiCamera",
-        "revision":     "ten-anx"
+        "revision":     "ten-whyred"
     }
 
 ]
