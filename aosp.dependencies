@@ -3,13 +3,13 @@
         "remote":       "github",
         "repository":   "Jhonse02/android_device_xiaomi_whyred",
         "target_path":  "device/xiaomi/whyred",
-        "revision":     "ten"
+        "revision":     "ss"
     },
     {
         "remote":       "github",
         "repository":   "Jhonse02/android_device_xiaomi_sdm660-common",
         "target_path":  "device/xiaomi/sdm660-common",
-        "revision":     "ten"
+        "revision":     "ss"
     },
     {
         "remote":       "github",
