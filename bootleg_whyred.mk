@@ -20,19 +20,22 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
 $(call inherit-product-if-exists, vendor/MiuiCamera/config.mk)
 
-# Inherit some common Lineage stuff
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
-TARGET_BOOT_ANIMATION_RES := 1080
-TARGET_INCLUDE_WIFI_EXT := true
-TARGET_GAPPS_ARCH := arm64
-TARGET_SUPPORTS_GOOGLE_RECORDER := true
+# Include Bootleg common configuration
+include vendor/bootleggers/config/common_full_phone.mk
+BOOTLEGGERS_BUILD_TYPE := DEFY
+TARGET_SCREEN_HEIGHT := 1920
+TARGET_SCREEN_WIDTH := 1080
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.bootleggers.maintainer=MocaRafee
+
+PRODUCT_PACKAGES += \
+    RemovePackages \
+    SimIcons
+
 
 # Inherit from whyred device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
-
-# Wallpapers
-PRODUCT_PACKAGES += \
-    PixelLiveWallpaperPrebuilt
 
 # AOT Preload
 PRODUCT_DEXPREOPT_SPEED_APPS += \
@@ -42,7 +45,7 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
 PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := whyred
 PRODUCT_MANUFACTURER := Xiaomi
-PRODUCT_NAME := aosp_whyred
+PRODUCT_NAME := bootleg_whyred
 PRODUCT_MODEL := Redmi Note 5
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
