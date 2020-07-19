@@ -20,29 +20,23 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
 $(call inherit-product-if-exists, vendor/MiuiCamera/config.mk)
 
-# Inherit some common Lineage stuff
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
-TARGET_BOOT_ANIMATION_RES := 1080
-TARGET_INCLUDE_WIFI_EXT := true
-TARGET_GAPPS_ARCH := arm64
-TARGET_SUPPORTS_GOOGLE_RECORDER := true
+# Inherit some common ZenX-OS stuff.
+$(call inherit-product, vendor/zenx/config/common_full_phone.mk)
+$(call inherit-product, vendor/zenx/config/phone-xxhdpi-3072-hwui-memory.mk)
+TARGET_SCREEN_WIDTH := 1080
+TARGET_SCREEN_HEIGHT := 1920
+LAWNCHAIR_OPTOUT := true
+PRODUCT_PACKAGES += \
+    NexusLauncherReleaseOverlay \
+    GalleryGoPrebuilt
 
 # Inherit from whyred device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
-# Wallpapers
-PRODUCT_PACKAGES += \
-    PixelLiveWallpaperPrebuilt
-
-# AOT Preload
-PRODUCT_DEXPREOPT_SPEED_APPS += \
-    SystemUI \
-    NexusLauncherRelease
-
 PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := whyred
 PRODUCT_MANUFACTURER := Xiaomi
-PRODUCT_NAME := aosp_whyred
+PRODUCT_NAME := zenx_whyred
 PRODUCT_MODEL := Redmi Note 5
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
