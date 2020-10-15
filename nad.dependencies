@@ -13,9 +13,9 @@
    },
    {
       "remote":"github",
-      "repository":"attack11/Whyred",
+      "repository":"AOSiP-Devices/kernel_xiaomi_sdm660",
       "target_path":"kernel/xiaomi/sdm660",
-      "branch":"extended-eas"
+      "branch":"eleven"
    },
    {
       "remote":"ghpriv",
