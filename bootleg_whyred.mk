@@ -20,19 +20,16 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
 $(call inherit-product-if-exists, vendor/MiuiCamera/config.mk)
 
-# Inherit some common NusantaraROM stuff.
-$(call inherit-product, vendor/nusantara/config/common_full_phone.mk)
-$(call inherit-product-if-exists, packages/apps/NusantaraParts/nadproject.mk)
-NAD_BUILD_TYPE := OFFICIAL
-TARGET_BOOT_ANIMATION_RES := 1080
-TARGET_USES_BLUR := true
+# Inherit some common Bootleg stuff.
+$(call inherit-product, vendor/bootleggers/config/common_full_phone.mk)
+
+# Boot animation
+TARGET_SCREEN_HEIGHT := 1920
+TARGET_SCREEN_WIDTH := 1080
+TARGET_BOOTLEG_ARCH := arm64
 
 # Inherit from whyred device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
-
-# Wallpapers
-PRODUCT_PACKAGES += \
-    NusantaraPapers
 	
 # Some bloatware
 $(call inherit-product-if-exists, device/bloatware/config.mk)
@@ -45,7 +42,7 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
 PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := whyred
 PRODUCT_MANUFACTURER := Xiaomi
-PRODUCT_NAME := nad_whyred
+PRODUCT_NAME := bootleg_whyred
 PRODUCT_MODEL := Redmi Note 5
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
